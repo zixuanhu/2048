@@ -1,0 +1,194 @@
+.body {
+    background-color: rgba(32, 30, 3, 0.185);
+    font-family: "Poiret One", cursive;
+}
+
+.instruction span{
+    color: rgb(205, 122, 221);
+}
+
+.instruction label{
+    color: rgb(165, 141, 141);
+}
+
+.rule label{
+    color: rgb(165, 141, 141);
+    font-size: 150%;
+}
+
+.rule label{
+    color: rgb(165, 141, 141);
+    font-size: 150%
+}
+
+
+#board{
+    width: 500px;
+    height: 500px;
+    background-color: #ccc;
+    position: relative;
+    margin: 0px 0 0 -250px;
+    left: 50%;
+    
+    
+}
+
+#board div.tile0{
+    float: left;
+    background-color: rgb(207, 194, 151);
+    height: 20%;
+    width: 20%;
+    margin: 20px 0 0 20px;
+    font-size: 50px; 
+    line-height: 100px;
+    text-align: center;
+    font-family:Georgia;
+}
+#board div.tile2{
+    float: left;
+    background-color: rgb(207, 200, 100);
+    height: 20%;
+    width: 20%;
+    margin: 20px 0 0 20px;
+    font-size: 50px; 
+    line-height: 100px;
+    text-align: center;
+    font-family:Georgia;
+}
+
+#board div.tile4{
+    float: left;
+    background-color: rgb(136, 156, 53);
+    height: 20%;
+    width: 20%;
+    margin: 20px 0 0 20px;
+    font-size: 50px; 
+    line-height: 100px;
+    text-align: center;
+    font-family:Georgia;
+}
+
+#board div.tile8{
+    float: left;
+    background-color: rgb(108, 128, 28);
+    height: 20%;
+    width: 20%;
+    margin: 20px 0 0 20px;
+    font-size: 50px; 
+    line-height: 100px;
+    text-align: center;
+    font-family:Georgia;
+}
+
+#board div.tile16{
+    float: left;
+    background-color: rgb(82, 99, 14);
+    height: 20%;
+    width: 20%;
+    margin: 20px 0 0 20px;
+    font-size: 50px; 
+    line-height: 100px;
+    text-align: center;
+    font-family:Georgia;
+}
+
+#board div.tile32{
+    float: left;
+    background-color: rgb(117, 143, 14);
+    height: 20%;
+    width: 20%;
+    margin: 20px 0 0 20px;
+    font-size: 50px; 
+    line-height: 100px;
+    text-align: center;
+    font-family:Georgia;
+}
+
+#board div.tile64{
+    float: left;
+    background-color: rgb(56, 70, 3);
+    height: 20%;
+    width: 20%;
+    margin: 20px 0 0 20px;
+    font-size: 50px; 
+    line-height: 100px;
+    text-align: center;
+    font-family:Georgia;
+}
+
+#board div.tile128{
+    float: left;
+    background-color: rgb(155, 180, 12);
+    height: 20%;
+    width: 20%;
+    margin: 20px 0 0 20px;
+    font-size: 50px; 
+    line-height: 100px;
+    text-align: center;
+    font-family:Georgia;
+}
+
+#board div.tile256{
+    float: left;
+    background-color: rgb(190, 221, 15);
+    height: 20%;
+    width: 20%;
+    margin: 20px 0 0 20px;
+    font-size: 50px; 
+    line-height: 100px;
+    text-align: center;
+    font-family:Georgia;
+}
+
+#board div.tile512{
+    float: left;
+    background-color: rgb(201, 233, 19);
+    height: 20%;
+    width: 20%;
+    margin: 20px 0 0 20px;
+    font-size: 50px; 
+    line-height: 100px;
+    text-align: center;
+    font-family:Georgia;
+}
+
+#board div.tile1024{
+    float: left;
+    background-color: rgb(231, 247, 11);
+    height: 20%;
+    width: 20%;
+    margin: 20px 0 0 20px;
+    font-size: 50px; 
+    line-height: 100px;
+    text-align: center;
+    font-family:Georgia;
+}
+
+#board div.tile2048{
+    float: left;
+    background-color: rgb(247, 212, 11);
+    height: 20%;
+    width: 20%;
+    margin: 20px 0 0 20px;
+    font-size: 30px; 
+    line-height: 100px;
+    text-align: center;
+    font-family:Georgia;
+}
+
+
+.game-container{
+    position: relative;
+}
+
+#message{
+    position: absolute;
+    font-family: "TahomaLucida Console";
+    font-size: 250%;
+    color: rgb(255, 0, 255);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top:40%;
+    text-align: center;
+}
