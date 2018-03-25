@@ -5,6 +5,10 @@
     font-family: "Poiret One";
 }
 
+#head{
+    font-size:10vw;
+}
+
 .instruction span{
     color: rgb(205, 122, 221);
 }
@@ -24,158 +28,93 @@
 }
 
 
+
 #board{
-    width: 500px;
-    height: 500px;
+    width: 50vw;
+    height: 50vw;
     background-color: #ccc;
     position: relative;
-    margin: 0px 0 0 -250px;
+    margin: 0px 0 0 -25vw;
     left: 50%;
     
     
 }
 
-#board div.tile0{
+#board div.tile{
     float: left;
-    background-color: rgb(207, 194, 151);
     height: 20%;
     width: 20%;
-    margin: 20px 0 0 20px;
-    font-size: 50px; 
-    line-height: 100px;
+    margin: 4% 0 0 4%;
+    line-height: 10vw;
     text-align: center;
     font-family:Georgia;
 }
+
+#board div.tile0{
+    background-color: rgb(207, 194, 151);
+    
+}
 #board div.tile2{
-    float: left;
     background-color: rgb(207, 200, 100);
-    height: 20%;
-    width: 20%;
-    margin: 20px 0 0 20px;
-    font-size: 50px; 
-    line-height: 100px;
-    text-align: center;
-    font-family:Georgia;
+    font-size: 4vw; 
+    
 }
 
 #board div.tile4{
-    float: left;
     background-color: rgb(136, 156, 53);
-    height: 20%;
-    width: 20%;
-    margin: 20px 0 0 20px;
-    font-size: 50px; 
-    line-height: 100px;
-    text-align: center;
-    font-family:Georgia;
+    font-size: 4vw; 
+    
 }
 
 #board div.tile8{
-    float: left;
     background-color: rgb(108, 128, 28);
-    height: 20%;
-    width: 20%;
-    margin: 20px 0 0 20px;
-    font-size: 50px; 
-    line-height: 100px;
-    text-align: center;
-    font-family:Georgia;
+    font-size: 4vw; 
+    
 }
 
 #board div.tile16{
-    float: left;
     background-color: rgb(82, 99, 14);
-    height: 20%;
-    width: 20%;
-    margin: 20px 0 0 20px;
-    font-size: 50px; 
-    line-height: 100px;
-    text-align: center;
-    font-family:Georgia;
+    font-size: 3vw; 
+    
 }
 
 #board div.tile32{
-    float: left;
     background-color: rgb(117, 143, 14);
-    height: 20%;
-    width: 20%;
-    margin: 20px 0 0 20px;
-    font-size: 50px; 
-    line-height: 100px;
-    text-align: center;
-    font-family:Georgia;
+    font-size: 3vw; 
 }
 
 #board div.tile64{
-    float: left;
     background-color: rgb(56, 70, 3);
-    height: 20%;
-    width: 20%;
-    margin: 20px 0 0 20px;
-    font-size: 50px; 
-    line-height: 100px;
-    text-align: center;
-    font-family:Georgia;
+    font-size: 3vw; 
 }
 
 #board div.tile128{
-    float: left;
     background-color: rgb(155, 180, 12);
-    height: 20%;
-    width: 20%;
-    margin: 20px 0 0 20px;
-    font-size: 50px; 
-    line-height: 100px;
-    text-align: center;
-    font-family:Georgia;
+    font-size: 2.5vw; 
+    
 }
 
 #board div.tile256{
-    float: left;
     background-color: rgb(190, 221, 15);
-    height: 20%;
-    width: 20%;
-    margin: 20px 0 0 20px;
-    font-size: 50px; 
-    line-height: 100px;
-    text-align: center;
-    font-family:Georgia;
+    font-size: 2.5vw; 
+    
 }
 
 #board div.tile512{
-    float: left;
     background-color: rgb(201, 233, 19);
-    height: 20%;
-    width: 20%;
-    margin: 20px 0 0 20px;
-    font-size: 50px; 
-    line-height: 100px;
-    text-align: center;
-    font-family:Georgia;
+    font-size: 2.5vw; 
+    
 }
 
 #board div.tile1024{
-    float: left;
     background-color: rgb(231, 247, 11);
-    height: 20%;
-    width: 20%;
-    margin: 20px 0 0 20px;
-    font-size: 50px; 
-    line-height: 100px;
-    text-align: center;
-    font-family:Georgia;
+    font-size: 1.5vw; 
+    
 }
 
 #board div.tile2048{
-    float: left;
     background-color: rgb(247, 212, 11);
-    height: 20%;
-    width: 20%;
-    margin: 20px 0 0 20px;
-    font-size: 30px; 
-    line-height: 100px;
-    text-align: center;
-    font-family:Georgia;
+    font-size: 1.5vw; 
 }
 
 
