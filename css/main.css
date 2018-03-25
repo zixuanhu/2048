@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito|Poiret+One|Josefin+Slab");
+
 .body {
-    background-color: rgba(32, 30, 3, 0.185);
-    font-family: "Poiret One", cursive;
+    background-color: rgb(32, 30, 3, 0.185);
+    font-family: "Poiret One";
 }
 
 .instruction span{

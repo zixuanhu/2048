@@ -290,6 +290,24 @@ window.onload = function () {
         game.init();
         message.innerText = "";
     };
+    let handGesture = new Hammer(document.getElementById("board"));
+    // debugger;
+    handGesture.on("panup", function (e) {
+        console.log("pass up");
+        game.upMove();
+    });
+    handGesture.on("pandown", function (e) {
+        console.log("pass down");
+        game.downMove();
+    });
+    handGesture.on("panleft", function (e) {
+        console.log("pass left");
+        game.leftMove();
+    });
+    handGesture.on("panright", function (e) {
+        console.log("pass right");
+        game.rightMove();
+    });
 
 }
 
