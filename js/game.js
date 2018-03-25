@@ -291,7 +291,7 @@ window.onload = function () {
         message.innerText = "";
     };
     let handGesture = new Hammer(document.getElementById("board"));
-    // debugger;
+
     handGesture.on("panup", function (e) {
         console.log("pass up");
         game.upMove();
