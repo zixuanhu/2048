@@ -292,19 +292,23 @@ window.onload = function () {
     };
     let handGesture = new Hammer(document.getElementById("board"));
 
-    handGesture.on("panup", function (e) {
+    handGesture.get('swipe').set({
+        direction: Hammer.DIRECTION_ALL
+    });
+
+    handGesture.on("swipeup", function (e) {
         console.log("pass up");
         game.upMove();
     });
-    handGesture.on("pandown", function (e) {
+    handGesture.on("swipedown", function (e) {
         console.log("pass down");
         game.downMove();
     });
-    handGesture.on("panleft", function (e) {
+    handGesture.on("swipeleft", function (e) {
         console.log("pass left");
         game.leftMove();
     });
-    handGesture.on("panright", function (e) {
+    handGesture.on("swiperight", function (e) {
         console.log("pass right");
         game.rightMove();
     });
