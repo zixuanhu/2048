@@ -2,8 +2,9 @@ const LEFT = [37, 65];
 const UP = [38, 87];
 const RIGHT = [39, 68];
 const DOWN = [40, 83];
-let container, game, startBtn, keynum, keychar, message, lock, score;
-var scoreMessage;
+const WIN = 2048;
+let container, game, startBtn, keynum, keychar, message, lock, score, scoreMessage;
+
 
 // class Object
 function gameRun(container) {
@@ -22,33 +23,9 @@ gameRun.prototype.init = function () {
         this.container.appendChild(tile);
         this.tiles[i] = tile;
     }
-
     this.randomTile();
     this.randomTile();
-    //this.buildFailBaord();
-    //this.buildWinBaord();
 }
-
-// gameRun.prototype.buildFailBaord = function () {
-//     for (let row = 0; row < 4; row++) {
-//         for (let col = 0; col < 4; col++) {
-//             let index = col + row * 4;
-//             if (col === 1 || col === 3) this.change(this.tiles[index], Math.pow(2, row + 1));
-//             if (col === 0 || col === 2) this.change(this.tiles[index], Math.pow(4, row + 1));
-//         }
-//     }
-// }
-
-// gameRun.prototype.buildWinBaord = function () {
-//     for (let row = 0; row < 4; row++) {
-//         for (let col = 0; col < 4; col++) {
-//             let index = col + row * 4;
-//             if (col === 1 || col === 3) this.change(this.tiles[index], '1024');
-//             if (col === 0 || col === 2) this.change(this.tiles[index], '0');
-//         }
-//     }
-// }
-
 
 //to create a new tile in "html" with "div"
 gameRun.prototype.newTile = function (val) {
@@ -64,7 +41,6 @@ gameRun.prototype.setTileVal = function (tile, val) {
     //add text in div
     if (val !== '0') tile.innerHTML = `${val}`;
     else tile.innerHTML = ' ';
-
 }
 
 //set/change Classname
@@ -76,7 +52,10 @@ gameRun.prototype.setClassName = function (tile, val, index) {
 gameRun.prototype.change = function (tile, val) {
     this.setClassName(tile, val, tile.getAttribute("index"));
     this.setTileVal(tile, val);
-
+}
+gameRun.prototype.exchange = function (tile1, val1, tile2, val2) {
+    gameRun.prototype.change(tile1, val1);
+    gameRun.prototype.change(tile2, val2);
 }
 
 gameRun.prototype.clearContainer = function () {
@@ -102,14 +81,12 @@ gameRun.prototype.randomTile = function () {
 }
 
 gameRun.prototype.win = function () {
-    console.log("win");
     message.innerHTML = "You WIN!"
     lock = true;
 
 }
 
 gameRun.prototype.lost = function () {
-    console.log("fail");
     message.innerHTML = "You Fail!";
     lock = true;
 }
@@ -119,10 +96,7 @@ gameRun.prototype.upMove = function () {
     let moved = false;
     for (let col = 0; col < 4; col++) {
         for (let row = 0; row < 4; row++) {
-            let index = col + row * 4;
-            let newVal = tiles[index].getAttribute("val");
-            let checkIndex = index + 4;
-            let moveUpIndex = index;
+            let index = col + row * 4, newVal = tiles[index].getAttribute("val"), checkIndex = index + 4, moveUpIndex = index;
             while (newVal !== '0' && checkIndex + 4 < 16 && tiles[checkIndex].getAttribute("val") === '0') {
                 checkIndex += 4;
             }
@@ -131,18 +105,16 @@ gameRun.prototype.upMove = function () {
                 newVal *= 2;
                 score += newVal;
                 moved = true;
-                gameRun.prototype.change(tiles[index], newVal);
-                gameRun.prototype.change(tiles[checkIndex], '0');
+                gameRun.prototype.exchange(tiles[index], newVal, tiles[checkIndex], '0');
             }
-            if (~~newVal === 2048) this.win();
+            if (~~newVal === WIN) this.win();
             //find move up index
             while (newVal !== '0' && moveUpIndex - 4 >= 0 && tiles[moveUpIndex - 4].getAttribute("val") === '0') {
                 moveUpIndex -= 4;
             }
             if (newVal !== '0' && moveUpIndex >= 0 && moveUpIndex !== index) {
                 moved = true;
-                gameRun.prototype.change(tiles[moveUpIndex], tiles[index].getAttribute("val"));
-                gameRun.prototype.change(tiles[index], '0');
+                gameRun.prototype.exchange(tiles[moveUpIndex], tiles[index].getAttribute("val"), tiles[index], '0');
             }
         }
     }
@@ -156,10 +128,7 @@ gameRun.prototype.downMove = function () {
     let moved = false;
     for (let col = 0; col < 4; col++) {
         for (let row = 3; row >= 0; row--) {
-            let index = col + row * 4;
-            let newVal = tiles[index].getAttribute("val");
-            let checkIndex = index - 4;
-            let moveDownIndex = index;
+            let index = col + row * 4, newVal = tiles[index].getAttribute("val"), checkIndex = index - 4, moveDownIndex = index;
             while (newVal !== '0' && checkIndex - 4 >= 0 && tiles[checkIndex].getAttribute("val") === '0') {
                 checkIndex -= 4;
             }
@@ -168,18 +137,17 @@ gameRun.prototype.downMove = function () {
                 newVal *= 2;
                 score += newVal;
                 moved = true;
-                gameRun.prototype.change(tiles[index], newVal);
-                gameRun.prototype.change(tiles[checkIndex], '0');
+                gameRun.prototype.exchange(tiles[index], newVal, tiles[checkIndex], '0');
+
             }
-            if (~~newVal === 2048) this.win();
+            if (~~newVal === WIN) this.win();
             //find move down index
             while (newVal !== '0' && moveDownIndex + 4 < 16 && tiles[moveDownIndex + 4].getAttribute("val") === '0') {
                 moveDownIndex += 4;
             }
             if (newVal !== '0' && moveDownIndex >= 0 && moveDownIndex !== index) {
                 moved = true;
-                gameRun.prototype.change(tiles[moveDownIndex], tiles[index].getAttribute("val"));
-                gameRun.prototype.change(tiles[index], '0');
+                gameRun.prototype.exchange(tiles[moveDownIndex], tiles[index].getAttribute("val"), tiles[index], '0');
             }
         }
     }
@@ -192,10 +160,7 @@ gameRun.prototype.leftMove = function () {
     let moved = false;
     for (let col = 0; col < 4; col++) {
         for (let row = 3; row >= 0; row--) {
-            let index = col + row * 4;
-            let newVal = tiles[index].getAttribute("val");
-            let checkIndex = index + 1;
-            let moveLeftindex = index;
+            let index = col + row * 4, newVal = tiles[index].getAttribute("val"), checkIndex = index + 1, moveLeftindex = index;
             while (newVal !== '0' && checkIndex + 1 < 4 + row * 4 && tiles[checkIndex].getAttribute("val") === '0') {
                 checkIndex += 1;
             }
@@ -204,18 +169,16 @@ gameRun.prototype.leftMove = function () {
                 newVal *= 2;
                 score += newVal;
                 moved = true;
-                gameRun.prototype.change(tiles[index], newVal);
-                gameRun.prototype.change(tiles[checkIndex], '0');
+                gameRun.prototype.exchange(tiles[index], newVal, tiles[checkIndex], '0');
             }
-            if (~~newVal === 2048) this.win();
+            if (~~newVal === WIN) this.win();
             //find move left index
             while (newVal !== '0' && moveLeftindex - 1 >= row * 4 && tiles[moveLeftindex - 1].getAttribute("val") === '0') {
                 moveLeftindex -= 1;
             }
             if (newVal !== '0' && moveLeftindex >= row * 4 && moveLeftindex !== index) {
                 moved = true;
-                gameRun.prototype.change(tiles[moveLeftindex], tiles[index].getAttribute("val"));
-                gameRun.prototype.change(tiles[index], '0');
+                gameRun.prototype.exchange(tiles[moveLeftindex], tiles[index].getAttribute("val"), tiles[index], '0');
             }
         }
     }
@@ -229,10 +192,7 @@ gameRun.prototype.rightMove = function () {
     let moved = false;
     for (let col = 3; col >= 0; col--) {
         for (let row = 3; row >= 0; row--) {
-            let index = col + row * 4;
-            let newVal = tiles[index].getAttribute("val");
-            let checkIndex = index - 1;
-            let moveRightIndex = index;
+            let index = col + row * 4, newVal = tiles[index].getAttribute("val"), checkIndex = index - 1, moveRightIndex = index;
             while (newVal !== '0' && checkIndex - 1 >= row * 4 && tiles[checkIndex].getAttribute("val") === '0') {
                 checkIndex -= 1;
             }
@@ -241,18 +201,16 @@ gameRun.prototype.rightMove = function () {
                 newVal *= 2;
                 score += newVal;
                 moved = true;
-                gameRun.prototype.change(tiles[index], newVal);
-                gameRun.prototype.change(tiles[checkIndex], '0');
+                gameRun.prototype.exchange(tiles[index], newVal, tiles[checkIndex], '0');
             }
-            if (~newVal === 2048) this.win();
+            if (~newVal === WIN) this.win();
             //find move right index
             while (newVal !== '0' && moveRightIndex + 1 < row * 4 + 4 && tiles[moveRightIndex + 1].getAttribute("val") === '0') {
                 moveRightIndex += 1;
             }
             if (newVal !== '0' && moveRightIndex < row * 4 + 4 && moveRightIndex !== index) {
                 moved = true;
-                gameRun.prototype.change(tiles[moveRightIndex], tiles[index].getAttribute("val"));
-                gameRun.prototype.change(tiles[index], '0');
+                gameRun.prototype.exchange(tiles[moveRightIndex], tiles[index].getAttribute("val"), tiles[index], '0');
             }
         }
     }
@@ -265,13 +223,7 @@ gameRun.prototype.checkLost = function () {
     for (let row = 0; row < 4; row++) {
         for (let col = 0; col < 4; col++) {
             let index = col + row * 4;
-            if (tiles[index].getAttribute("val") === '0') {
-                return false;
-            }
-            if (index + 4 < 16 && tiles[index + 4].getAttribute("val") === tiles[index].getAttribute("val")) {
-                return false;
-            }
-            if (index + 1 < 4 + row * 4 && tiles[index + 1].getAttribute("val") === tiles[index].getAttribute("val")) {
+            if (tiles[index].getAttribute("val") === '0' || index + 4 < 16 && tiles[index + 4].getAttribute("val") === tiles[index].getAttribute("val") || index + 1 < 4 + row * 4 && tiles[index + 1].getAttribute("val") === tiles[index].getAttribute("val")) {
                 return false;
             }
         }
@@ -304,19 +256,15 @@ window.onload = function () {
     });
 
     handGesture.on("swipeup", function (e) {
-        console.log("pass up");
         game.upMove();
     });
     handGesture.on("swipedown", function (e) {
-        console.log("pass down");
         game.downMove();
     });
     handGesture.on("swipeleft", function (e) {
-        console.log("pass left");
         game.leftMove();
     });
     handGesture.on("swiperight", function (e) {
-        console.log("pass right");
         game.rightMove();
     });
 
@@ -345,7 +293,5 @@ window.onkeydown = function (e) {
             game.rightMove();
         }
         scoreMessage.innerHTML = `score : ${score}`;
-        this.console.log(score);
-
     }
 }

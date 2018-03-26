@@ -3,9 +3,10 @@
 #score{
     width: 20vmin;
     height: 5vmin;
+    font-size: 3vmin;
+    margin: -5vmin 0 1vmin -10vmin;
     background-color: burlywood;
     left:50%;
-    margin: 0 0 0 5vmin;
     position: relative;
     border-radius: 4px;
 }
