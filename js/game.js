@@ -2,7 +2,8 @@ const LEFT = [37, 65];
 const UP = [38, 87];
 const RIGHT = [39, 68];
 const DOWN = [40, 83];
-let container, game, startBtn, keynum, keychar, message, lock;
+let container, game, startBtn, keynum, keychar, message, lock, score;
+var scoreMessage;
 
 // class Object
 function gameRun(container) {
@@ -128,7 +129,7 @@ gameRun.prototype.upMove = function () {
             //merge up
             if (newVal !== '0' && checkIndex < 16 && newVal === tiles[checkIndex].getAttribute("val")) {
                 newVal *= 2;
-                newVal = JSON.stringify(newVal);
+                score += newVal;
                 moved = true;
                 gameRun.prototype.change(tiles[index], newVal);
                 gameRun.prototype.change(tiles[checkIndex], '0');
@@ -165,6 +166,7 @@ gameRun.prototype.downMove = function () {
             //merge down
             if (newVal !== '0' && checkIndex >= 0 && newVal === tiles[checkIndex].getAttribute("val")) {
                 newVal *= 2;
+                score += newVal;
                 moved = true;
                 gameRun.prototype.change(tiles[index], newVal);
                 gameRun.prototype.change(tiles[checkIndex], '0');
@@ -200,6 +202,7 @@ gameRun.prototype.leftMove = function () {
             //merge left
             if (newVal !== '0' && checkIndex < 4 + row * 4 && newVal === tiles[checkIndex].getAttribute("val")) {
                 newVal *= 2;
+                score += newVal;
                 moved = true;
                 gameRun.prototype.change(tiles[index], newVal);
                 gameRun.prototype.change(tiles[checkIndex], '0');
@@ -236,6 +239,7 @@ gameRun.prototype.rightMove = function () {
             //merge right
             if (newVal !== '0' && checkIndex >= row * 4 && newVal === tiles[checkIndex].getAttribute("val")) {
                 newVal *= 2;
+                score += newVal;
                 moved = true;
                 gameRun.prototype.change(tiles[index], newVal);
                 gameRun.prototype.change(tiles[checkIndex], '0');
@@ -283,12 +287,15 @@ window.onload = function () {
     startBtn = document.getElementById("start");
     // built the message
     message = document.getElementById("message")
-
+    // built the score
+    scoreMessage = document.getElementById("score");
     startBtn.onclick = function () {
         lock = false;
         game = new gameRun(container);
         game.init();
         message.innerText = "";
+        score = 0;
+        scoreMessage.innerHTML = `score : ${0}`
     };
     let handGesture = new Hammer(document.getElementById("board"));
 
@@ -337,6 +344,8 @@ window.onkeydown = function (e) {
         if (RIGHT.includes(keynum)) {
             game.rightMove();
         }
+        scoreMessage.innerHTML = `score : ${score}`;
+        this.console.log(score);
 
     }
 }

@@ -1,12 +1,31 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito|Poiret+One|Josefin+Slab");
 
+#score{
+    width: 20vmin;
+    height: 5vmin;
+    background-color: burlywood;
+    left:50%;
+    margin: 0 0 0 5vmin;
+    position: relative;
+    border-radius: 4px;
+}
+#start{
+    width: 10vmin;
+    height: 5vmin;
+    font-size: 2.5vmin;
+}
 .body {
     background-color: rgb(32, 30, 3, 0.185);
     font-family: "Poiret One";
 }
 
-#head{
-    font-size:10vw;
+.head{
+    font-size:2.5vmin;
+    
+}
+
+.instruction{
+    font-size: 2vmin;
 }
 
 .instruction span{
@@ -30,14 +49,18 @@
 
 
 #board{
-    width: 50vw;
-    height: 50vw;
+    width: 50vmin;
+    height: 50vmin;
     background-color: #ccc;
     position: relative;
-    margin: 0px 0 0 -25vw;
+    margin: 0 0 0 -25vmin;
     left: 50%;
     
     
+}
+
+.gamename{
+    font-size: 200%;
 }
 
 #board div.tile{
@@ -45,7 +68,7 @@
     height: 20%;
     width: 20%;
     margin: 4% 0 0 4%;
-    line-height: 10vw;
+    line-height: 10vmin;
     text-align: center;
     font-family:Georgia;
 }
@@ -56,65 +79,65 @@
 }
 #board div.tile2{
     background-color: rgb(207, 200, 100);
-    font-size: 4vw; 
+    font-size: 4vmin; 
     
 }
 
 #board div.tile4{
     background-color: rgb(136, 156, 53);
-    font-size: 4vw; 
+    font-size: 4vmin; 
     
 }
 
 #board div.tile8{
     background-color: rgb(108, 128, 28);
-    font-size: 4vw; 
+    font-size: 4vmin; 
     
 }
 
 #board div.tile16{
     background-color: rgb(82, 99, 14);
-    font-size: 3vw; 
+    font-size: 3vmin; 
     
 }
 
 #board div.tile32{
     background-color: rgb(117, 143, 14);
-    font-size: 3vw; 
+    font-size: 3vmin; 
 }
 
 #board div.tile64{
     background-color: rgb(56, 70, 3);
-    font-size: 3vw; 
+    font-size: 3vmin; 
 }
 
 #board div.tile128{
     background-color: rgb(155, 180, 12);
-    font-size: 2.5vw; 
+    font-size: 2.5vmin; 
     
 }
 
 #board div.tile256{
     background-color: rgb(190, 221, 15);
-    font-size: 2.5vw; 
+    font-size: 2.5vmin; 
     
 }
 
 #board div.tile512{
     background-color: rgb(201, 233, 19);
-    font-size: 2.5vw; 
+    font-size: 2.5vmin; 
     
 }
 
 #board div.tile1024{
     background-color: rgb(231, 247, 11);
-    font-size: 1.5vw; 
+    font-size: 1.5vmin; 
     
 }
 
 #board div.tile2048{
     background-color: rgb(247, 212, 11);
-    font-size: 1.5vw; 
+    font-size: 1.5vmin; 
 }
 
 
@@ -126,7 +149,7 @@
     position: absolute;
     font-family: "TahomaLucida Console";
     font-size: 250%;
-    color: rgb(255, 0, 255);
+    color: rgb(255, 8, 0, 0.445);
     z-index: 1;
     width: 100%;
     height: 100%;
