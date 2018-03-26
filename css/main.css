@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito|Poiret+One|Josefin+Slab");
 
+
 #score{
     width: 20vmin;
     height: 5vmin;
@@ -21,8 +22,7 @@
 }
 
 .head{
-    font-size:2.5vmin;
-    
+    font-size:2.5vmin;  
 }
 
 .instruction{
@@ -52,16 +52,16 @@
 #board{
     width: 50vmin;
     height: 50vmin;
-    background-color: #ccc;
     position: relative;
     margin: 0 0 0 -25vmin;
     left: 50%;
-    
-    
+    background-image: url("zixuanlogo.jpg");
+    background-size: 50vmin 50vmin;
+
 }
 
 .gamename{
-    font-size: 200%;
+    font-size: 201%;
 }
 
 #board div.tile{
