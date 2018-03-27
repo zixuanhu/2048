@@ -60,6 +60,19 @@
 
 }
 
+#board.innerHTML{
+    position: absolute;
+    font-family: "TahomaLucida Console";
+    font-size: 250%;
+    color: rgb(255, 8, 0, 0.445);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top:40%;
+    text-align: center;
+
+}
+
 .gamename{
     font-size: 201%;
 }
@@ -146,14 +159,3 @@
     position: relative;
 }
 
-#message{
-    position: absolute;
-    font-family: "TahomaLucida Console";
-    font-size: 250%;
-    color: rgb(255, 8, 0, 0.445);
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    top:40%;
-    text-align: center;
-}

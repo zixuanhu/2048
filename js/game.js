@@ -3,7 +3,31 @@ const UP = [38, 87];
 const RIGHT = [39, 68];
 const DOWN = [40, 83];
 const WIN = 2048;
-let container, game, startBtn, keynum, message, lock, score, scoreMessage, memory;
+let container, game, startBtn, keynum, lock, score, scoreMessage, memory;
+const handGesture = new Hammer(document.getElementById("board"));
+handGesture.get('swipe').set({
+    direction: Hammer.DIRECTION_ALL
+});
+
+handGesture.on("swipe", function (e) {
+
+});
+handGesture.on("swipeup", function (e) {
+
+    game.upMove();
+});
+handGesture.on("swipedown", function (e) {
+
+    game.downMove();
+});
+handGesture.on("swipeleft", function (e) {
+
+    game.leftMove();
+});
+handGesture.on("swiperight", function (e) {
+
+    game.rightMove();
+});
 
 
 // class Object
@@ -89,13 +113,13 @@ gameRun.prototype.randomTile = function () {
 }
 
 gameRun.prototype.win = function () {
-    message.innerHTML = "You WIN!"
+    container.innerHTML = "You WIN!"
     lock = true;
 
 }
 
 gameRun.prototype.lost = function () {
-    message.innerHTML = "You Fail!";
+    container.innerHTML = "You Fail!";
     lock = true;
 }
 
@@ -249,31 +273,10 @@ window.onload = function () {
         lock = false;
         game = new gameRun(container);
         game.init();
-        message.innerText = "";
+        //container.innerHTML = "";
         score = 0;
         scoreMessage.innerHTML = `score : ${0}`;
     };
-    const handGesture = new Hammer(document.getElementById("board"));
-    handGesture.get('swipe').set({
-        direction: Hammer.DIRECTION_ALL
-    });
-
-    handGesture.on("swipeup", function (e) {
-        console.log("up");
-        game.upMove();
-    });
-    handGesture.on("swipedown", function (e) {
-        console.log("down");
-        game.downMove();
-    });
-    handGesture.on("swipeleft", function (e) {
-        console.log("left");
-        game.leftMove();
-    });
-    handGesture.on("swiperight", function (e) {
-        console.log("right");
-        game.rightMove();
-    });
 
 }
 
