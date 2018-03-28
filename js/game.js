@@ -113,13 +113,13 @@ gameRun.prototype.randomTile = function () {
 }
 
 gameRun.prototype.win = function () {
-    message.innerHTML = "win";
+    message.innerHTML = "WIN";
     lock = true;
 
 }
 
 gameRun.prototype.lost = function () {
-    message.innerHTML = "fail"
+    message.innerHTML = "FAIL"
     lock = true;
 }
 
