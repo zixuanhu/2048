@@ -55,23 +55,13 @@
     position: relative;
     margin: 0 0 0 -25vmin;
     left: 50%;
-    background-image: url("zixuanlogo.jpg");
     background-size: 50vmin 50vmin;
+    border-radius: 2vmin;
+    background: #BBADA0;
 
 }
 
-#board.innerHTML{
-    position: absolute;
-    font-family: "TahomaLucida Console";
-    font-size: 250%;
-    color: rgb(255, 8, 0, 0.445);
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    top:40%;
-    text-align: center;
 
-}
 
 .gamename{
     font-size: 201%;
@@ -85,6 +75,7 @@
     line-height: 10vmin;
     text-align: center;
     font-family:Georgia;
+    border-radius: 2vmin;
 }
 
 #board div.tile0{
@@ -92,70 +83,91 @@
     
 }
 #board div.tile2{
-    background-color: rgb(207, 200, 100);
+    color: #776E65;
+	background: #EEE4DA;
     font-size: 4vmin; 
     
 }
 
 #board div.tile4{
-    background-color: rgb(136, 156, 53);
+    color: #776E65;
+	background: #EDE0C8;
     font-size: 4vmin; 
-    
 }
 
 #board div.tile8{
-    background-color: rgb(108, 128, 28);
+    color: #f9f6f2;
+	background: #f2b179;
     font-size: 4vmin; 
     
 }
 
 #board div.tile16{
-    background-color: rgb(82, 99, 14);
+    color: #f9f6f2;
+	background: #f59563;
     font-size: 3vmin; 
     
 }
 
 #board div.tile32{
-    background-color: rgb(117, 143, 14);
+    color: #f9f6f2;
+	background: #f67c5f;
     font-size: 3vmin; 
 }
 
 #board div.tile64{
-    background-color: rgb(56, 70, 3);
+    color: #f9f6f2;
+	background: #f65e3b;
     font-size: 3vmin; 
 }
 
 #board div.tile128{
-    background-color: rgb(155, 180, 12);
+    color: #f9f6f2;
+	background: #edcf72;
     font-size: 2.5vmin; 
     
 }
 
 #board div.tile256{
-    background-color: rgb(190, 221, 15);
+    color: #f9f6f2;
+	background: #edcc61;
     font-size: 2.5vmin; 
     
 }
 
 #board div.tile512{
-    background-color: rgb(201, 233, 19);
+    color: #f9f6f2;
+	background: #edc850;
     font-size: 2.5vmin; 
     
 }
 
 #board div.tile1024{
-    background-color: rgb(231, 247, 11);
+    color: #f9f6f2;
+	background: #edc53f;
     font-size: 1.5vmin; 
     
 }
 
 #board div.tile2048{
-    background-color: rgb(247, 212, 11);
+    color: #f9f6f2;
+	background: #edc22e;
     font-size: 1.5vmin; 
 }
 
 
-.game-container{
+#game-container{
     position: relative;
 }
 
+#message{
+    position: absolute;
+    font-family: "TahomaLucida Console";
+    font-size: 250%;
+    color:  red;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top:40%;
+    text-align: center;
+}

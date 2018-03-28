@@ -3,8 +3,8 @@ const UP = [38, 87];
 const RIGHT = [39, 68];
 const DOWN = [40, 83];
 const WIN = 2048;
-let container, game, startBtn, keynum, lock, score, scoreMessage, memory;
-const handGesture = new Hammer(document.getElementById("board"));
+let container, game, startBtn, keynum, lock, score, scoreMessage, memory, message;
+const handGesture = new Hammer(document.getElementById("game-container"));
 handGesture.get('swipe').set({
     direction: Hammer.DIRECTION_ALL
 });
@@ -113,13 +113,13 @@ gameRun.prototype.randomTile = function () {
 }
 
 gameRun.prototype.win = function () {
-    container.innerHTML = "You WIN!"
+    message.innerHTML = "win";
     lock = true;
 
 }
 
 gameRun.prototype.lost = function () {
-    container.innerHTML = "You Fail!";
+    message.innerHTML = "fail"
     lock = true;
 }
 
@@ -273,7 +273,7 @@ window.onload = function () {
         lock = false;
         game = new gameRun(container);
         game.init();
-        //container.innerHTML = "";
+        message.innerHTML = "";
         score = 0;
         scoreMessage.innerHTML = `score : ${0}`;
     };
