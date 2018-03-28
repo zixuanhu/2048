@@ -9,24 +9,23 @@ handGesture.get('swipe').set({
     direction: Hammer.DIRECTION_ALL
 });
 
-handGesture.on("swipe", function (e) {
 
-});
 handGesture.on("swipeup", function (e) {
-
     game.upMove();
+    scoreMessage.innerHTML = `score : ${score}`;
 });
 handGesture.on("swipedown", function (e) {
-
     game.downMove();
+    scoreMessage.innerHTML = `score : ${score}`;
 });
 handGesture.on("swipeleft", function (e) {
 
     game.leftMove();
+    scoreMessage.innerHTML = `score : ${score}`;
 });
 handGesture.on("swiperight", function (e) {
-
     game.rightMove();
+    scoreMessage.innerHTML = `score : ${score}`;
 });
 
 

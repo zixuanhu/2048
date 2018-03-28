@@ -50,10 +50,10 @@
 
 
 #board{
-    width: 50vmin;
-    height: 50vmin;
+    width: 70vmin;
+    height: 70vmin;
     position: relative;
-    margin: 0 0 0 -25vmin;
+    margin: 0 0 0 -35vmin;
     left: 50%;
     background-size: 50vmin 50vmin;
     border-radius: 2vmin;
@@ -85,74 +85,74 @@
 #board div.tile2{
     color: #776E65;
 	background: #EEE4DA;
-    font-size: 4vmin; 
+    font-size: 6vmin; 
     
 }
 
 #board div.tile4{
     color: #776E65;
 	background: #EDE0C8;
-    font-size: 4vmin; 
+    font-size: 6vmin; 
 }
 
 #board div.tile8{
     color: #f9f6f2;
 	background: #f2b179;
-    font-size: 4vmin; 
+    font-size: 6vmin; 
     
 }
 
 #board div.tile16{
     color: #f9f6f2;
 	background: #f59563;
-    font-size: 3vmin; 
+    font-size: 6vmin; 
     
 }
 
 #board div.tile32{
     color: #f9f6f2;
 	background: #f67c5f;
-    font-size: 3vmin; 
+    font-size: 6vmin; 
 }
 
 #board div.tile64{
     color: #f9f6f2;
 	background: #f65e3b;
-    font-size: 3vmin; 
+    font-size: 6vmin; 
 }
 
 #board div.tile128{
     color: #f9f6f2;
 	background: #edcf72;
-    font-size: 2.5vmin; 
+    font-size: 4vmin; 
     
 }
 
 #board div.tile256{
     color: #f9f6f2;
 	background: #edcc61;
-    font-size: 2.5vmin; 
+    font-size: 4vmin; 
     
 }
 
 #board div.tile512{
     color: #f9f6f2;
 	background: #edc850;
-    font-size: 2.5vmin; 
+    font-size: 4vmin; 
     
 }
 
 #board div.tile1024{
     color: #f9f6f2;
 	background: #edc53f;
-    font-size: 1.5vmin; 
+    font-size: 10vmin; 
     
 }
 
 #board div.tile2048{
     color: #f9f6f2;
 	background: #edc22e;
-    font-size: 1.5vmin; 
+    font-size: 10vmin; 
 }
 
 
