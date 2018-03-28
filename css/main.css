@@ -72,8 +72,9 @@
     height: 20%;
     width: 20%;
     margin: 4% 0 0 4%;
-    line-height: 10vmin;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family:Georgia;
     border-radius: 2vmin;
 }
