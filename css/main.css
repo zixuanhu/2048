@@ -124,14 +124,14 @@
 #board div.tile128{
     color: #f9f6f2;
 	background: #edcf72;
-    font-size: 4vmin; 
+    font-size: 5vmin; 
     
 }
 
 #board div.tile256{
     color: #f9f6f2;
 	background: #edcc61;
-    font-size: 4vmin; 
+    font-size: 5vmin; 
     
 }
 
@@ -145,14 +145,14 @@
 #board div.tile1024{
     color: #f9f6f2;
 	background: #edc53f;
-    font-size: 10vmin; 
+    font-size: 4vmin; 
     
 }
 
 #board div.tile2048{
     color: #f9f6f2;
 	background: #edc22e;
-    font-size: 10vmin; 
+    font-size: 4vmin; 
 }
 
 
